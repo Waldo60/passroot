@@ -25,7 +25,6 @@ echo -e "\033[1;31mESTABLECER LA CONTRASEÑA ROOT\033[0m"
 
 read -p "   [ S | N ]: " S
 if [ $S = s ]
-then
 
 sleep 1s; passwd && rm passrootnew
 fi
