@@ -1,5 +1,6 @@
 #!/bin/bash
 clear
+echo -e "\033[93m              AGREGAR/EDITAR PASS ROOT\033[97m" 
 
 [[ $(grep -c "prohibit-password" /etc/ssh/sshd_config) != '0' ]] && {
 	sed -i "s/prohibit-password/yes/g" /etc/ssh/sshd_config
