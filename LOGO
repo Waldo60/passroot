@@ -1,0 +1,8 @@
+echo -e "\033[93m              AGREGAR/EDITAR PASS ROOT\033[97m" 
+msg -bar
+echo -e "\033[1;96m INGRESE NUEVA CONTRASEÑA:\033[0;37m"; read -p " " pass
+(echo $pass; echo $pass)|passwd root 2>/dev/null
+sleep 1s
+msg -bar
+echo -e "\033[97m      CONTRASEÑA AGREGADA O EDITADA CORECTAMENTE"
+echo -e "\033[97m SU CONTRASEÑA AHORA ES: \e[41m $pass \033[0;37m"
