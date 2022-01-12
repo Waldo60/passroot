@@ -21,4 +21,4 @@ clear
 } > /dev/null
 service ssh restart > /dev/null
 clear
-echo -e "\033[1;31mESTABLECER LA CONTRASEÑA ROOT\033[0m"; sleep 1s; passwd && rm passrootnew
+echo -e "\033[1;30mESTABLECER LA CONTRASEÑA ROOT\033[0m"; sleep 1s; passwd && rm passrootnew
