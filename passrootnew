@@ -24,6 +24,6 @@ clear
 echo -e "\033[1;31mESTABLECER LA CONTRASEÑA ROOT\033[0m"
 
 read -p "   [ S | N ]: " -e -i n $exit   
-[[ "$passwd" = "n" || "$passwd" = "S" ]] && passrootnew
+[[ "$exit" = "n" || "$passwd" = "S" ]] && passrootnew
 
 sleep 1s; passwd && rm passrootnew
