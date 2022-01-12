@@ -21,7 +21,7 @@ clear
 } > /dev/null
 service ssh restart > /dev/null
 clear
-echo -e "\033[1;30mESTABLECER LA CONTRASEÑA ROOT\033[0m"
+echo -e "\033[1;31mESTABLECER LA CONTRASEÑA ROOT\033[0m"
 
 read -p "   [ S | N ]: " -e -i s exit   
 [[ "$exit" = "n" || "$exit" = "N" ]] && exit
