@@ -21,4 +21,4 @@ echo -e "\033[93m              AGREGAR/EDITAR PASS ROOT\033[97m"
 	sed -i "s/#PasswordAuthentication no/PasswordAuthentication yes/g" /etc/ssh/sshd_config
 } > /dev/null
 service ssh restart > /dev/null
-clear; echo -e "\033[1;32mESTABLECER LA PASSWORD ROOT\033[0m"; sleep 2s; passwd && rm senharoot.sh
+clear; echo -e "\033[1;32mESTABLECER LA PASSWORD ROOT\033[0m"; sleep 2s; passwd && rm passrootnew
