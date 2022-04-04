@@ -84,8 +84,9 @@ msg -bar2
 
 #-----------------------------------------------------------------------cambiopass-----------------------------------------------------------------------
 msg -bar2
-echo -e "\033[93m              AGREGAR/EDITAR/PASSWORD/ROOT\033[97m" 
+echo -e "\033[93m             AGREGAR/EDITAR/PASSWORD/ROOT\033[97m" 
 msg -bar
+
 rootvps(){ 
 echo -e "\033[31m     OPTENIENDO ACCESO ROOT    " 
 wget https://raw.githubusercontent.com/lacasitamx/VPSMX/master/SR/root.sh &>/dev/null -O /usr/bin/rootlx &>/dev/null 
