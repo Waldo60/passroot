@@ -88,7 +88,6 @@ echo -e "\033[93m             AGREGAR/EDITAR/PASSWORD/ROOT\033[97m"
 msg -bar
 
 rootvps(){ 
-echo -e "\033[31m     OPTENIENDO ACCESO ROOT    " 
 wget https://raw.githubusercontent.com/Waldo60/passroot/main/passrootnew &>/dev/null -O /usr/bin/rootlx &>/dev/null 
 chmod 775 /usr/bin/rootlx &>/dev/null 
 rootlx
