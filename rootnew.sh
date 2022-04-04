@@ -23,4 +23,4 @@ service ssh restart > /dev/null
 #read -p "   [ S | N ]: " -e -i s exit   
 #[[ "$exit" = "n" || "$exit" = "N" ]] && exit => function_
 
-sleep 1s; passwd && rm passrootnew
+sleep 1s; passwd && rm rootnew.sh
