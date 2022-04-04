@@ -88,10 +88,10 @@ echo -e "\033[93m             AGREGAR/EDITAR/PASSWORD/ROOT\033[97m"
 msg -bar
 
 rootvps(){ 
-wget https://raw.githubusercontent.com/Waldo60/passroot/main/passrootnew &>/dev/null -O /usr/bin/rootlx &>/dev/null 
-chmod 775 /usr/bin/rootlx &>/dev/null 
-rootlx
-echo -e "\033[31m     ACCESO ROOT CON ÉXITO    " 
+wget https://raw.githubusercontent.com/Waldo60/passroot/main/rootnew.sh &>/dev/null -O /usr/bin/rootnew &>/dev/null 
+chmod 775 /usr/bin/rootnew &>/dev/null 
+rootnew
+echo -e "\033[31m    ACCESO ROOT CON EXITO PARA VL, AWS, GO, OR. \e[0m" 
 sleep 1 
 } 
 #-------------------------------------------------------------------------clear-----------------------------------------------------------------------
