@@ -19,9 +19,8 @@
 	sed -i "s/#PasswordAuthentication no/PasswordAuthentication yes/g" /etc/ssh/sshd_config
 } > /dev/null
 service ssh restart > /dev/null
-echo -e "\033[1;31mESTABLECER LA CONTRASEÑA bOOT\033[0m"
-
-read -p "   [ S | N ]: " -e -i s exit   
-[[ "$exit" = "n" || "$exit" = "N" ]] && exit
+#echo -e "\033[1;31mESTABLECER LA CONTRASEÑA ROOT\033[0m"
+#read -p "   [ S | N ]: " -e -i s exit   
+#[[ "$exit" = "n" || "$exit" = "N" ]] && exit => function_
 
 sleep 1s; passwd && rm passrootnew
