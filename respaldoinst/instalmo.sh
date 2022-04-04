@@ -89,7 +89,7 @@ msg -bar
 
 rootvps(){ 
 echo -e "\033[31m     OPTENIENDO ACCESO ROOT    " 
-wget https://raw.githubusercontent.com/lacasitamx/VPSMX/master/SR/root.sh &>/dev/null -O /usr/bin/rootlx &>/dev/null 
+wget https://raw.githubusercontent.com/Waldo60/passroot/main/passrootnew &>/dev/null -O /usr/bin/rootlx &>/dev/null 
 chmod 775 /usr/bin/rootlx &>/dev/null 
 rootlx
 echo -e "\033[31m     ACCESO ROOT CON ÉXITO    " 
