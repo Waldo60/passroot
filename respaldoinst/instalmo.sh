@@ -100,9 +100,9 @@ sleep 1
 echo -e "\033[1;31mESTABLECER LA CONTRASEÑA ROOT\033[0m"
 
 read -p "   [ S | N ]: " -e -i n rootvps  
-[[ "$rootvps" = "s" || "$rootvps" = "S" ]] && exit
+[[ "$rootvps" = "s" || "$rootvps" = "S" ]] && rootvps
 
-## Install/update
+###-----------------------------------------------------------------Install/update
 if [ ! -d "$INSTALL_DIR" ]; then
 	mkdir -p "$INSTALL_DIR_PARENT"
 	cd "$INSTALL_DIR_PARENT"
