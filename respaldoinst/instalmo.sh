@@ -1,4 +1,5 @@
 #!/bin/bash
+1/03/2022
 clear
 rm $(pwd)/$0 &> /dev/null
 
