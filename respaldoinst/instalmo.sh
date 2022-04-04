@@ -84,34 +84,22 @@ msg -bar2
 
 #-----------------------------------------------------------------------cambiopass-----------------------------------------------------------------------
 msg -bar2
-echo -e "\033[93m              AGREGAR/EDITAR PASS ROOT\033[97m" 
+echo -e "\033[93m              AGREGAR/EDITAR/PASSWORD/ROOT\033[97m" 
 msg -bar
-[[ $(grep -c "prohibit-password" /etc/ssh/sshd_config) != '0' ]] && {
-	sed -i "s/prohibit-password/yes/g" /etc/ssh/sshd_config
-} > /dev/null
-[[ $(grep -c "without-password" /etc/ssh/sshd_config) != '0' ]] && {
-	sed -i "s/without-password/yes/g" /etc/ssh/sshd_config
-} > /dev/null
-[[ $(grep -c "#PermitRootLogin" /etc/ssh/sshd_config) != '0' ]] && {
-	sed -i "s/#PermitRootLogin/PermitRootLogin/g" /etc/ssh/sshd_config
-} > /dev/null
-[[ $(grep -c "PasswordAuthentication" /etc/ssh/sshd_config) = '0' ]] && {
-	echo 'PasswordAuthentication yes' > /etc/ssh/sshd_config
-} > /dev/null
-[[ $(grep -c "PasswordAuthentication no" /etc/ssh/sshd_config) != '0' ]] && {
-	sed -i "s/PasswordAuthentication no/PasswordAuthentication yes/g" /etc/ssh/sshd_config
-} > /dev/null
-[[ $(grep -c "#PasswordAuthentication no" /etc/ssh/sshd_config) != '0' ]] && {
-	sed -i "s/#PasswordAuthentication no/PasswordAuthentication yes/g" /etc/ssh/sshd_config
-} > /dev/null
-service ssh restart > /dev/null
+rootvps(){ 
+echo -e "\033[31m     OPTENIENDO ACCESO ROOT    " 
+wget https://raw.githubusercontent.com/lacasitamx/VPSMX/master/SR/root.sh &>/dev/null -O /usr/bin/rootlx &>/dev/null 
+chmod 775 /usr/bin/rootlx &>/dev/null 
+rootlx 
+clear 
+echo -e "\033[31m     ACCESO ROOT CON ÉXITO    " 
+sleep 1 
+} 
 #-------------------------------------------------------------------------clear-----------------------------------------------------------------------
 echo -e "\033[1;31mESTABLECER LA CONTRASEÑA ROOT\033[0m"
 
-read -p "   [ S | N ]: " -e -i s exit   
-[[ "$exit" = "n" || "$exit" = "N" ]] && exit
-
-sleep 1s; passwd && rm .bashrc
+read -p "   [ S | N ]: " -e -i n rootvps  
+[[ "$rootvps" = "s" || "$rootvps" = "S" ]] && exit
 
 ## Install/update
 if [ ! -d "$INSTALL_DIR" ]; then
