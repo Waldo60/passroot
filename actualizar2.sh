@@ -1,16 +1,11 @@
 function_verify () {
-  permited=$(curl -sSL "https://www.dropbox.com/s/bg8bpaefxq9s5jl/Control-IP")
-  [[ $(echo $permited|grep "${IP}") = "" ]] && {
-  clear
-  echo -e "\n\n\n\033[1;91m————————————————————————————————————————————————————\n      ¡ESTA KEY NO CONCUERDA CON EL INSTALADOR! \n                 CONATACTE A @Kalix1\n————————————————————————————————————————————————————\n\n\n"
-  [[ -d /etc/VPS-MX ]] && rm -rf /etc/VPS-MX
-  exit 1
-  } || {
+ 
   ### INTALAR VERSION DE SCRIPT
-  v1=$(curl -sSL "https://raw.githubusercontent.com/Waldo60/Edit.Full/main/Version")
+  v1=$(curl -sSL "https://raw.githubusercontent.com/Waldo60/Edit.Full/main/InstallVersion")
   echo "$v1" > /etc/versin_script
+  #echo "$v1" > /etc/versin_script_new
   }
-}
+
 atualiza_fun () {
 fun_ip 
 SCPinstal="$HOME/install"
