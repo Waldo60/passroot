@@ -1,7 +1,7 @@
 function_verify () {
  
   ### INTALAR VERSION DE SCRIPT
-  v1=$(curl -sSL "https://raw.githubusercontent.com/Waldo60/Edit.Full/main/InstallVersion")
+  v1=$(curl -sSL "https://raw.githubusercontent.com/Waldo60/A-peru/main/Install/Version")
   echo "$v1" > /etc/versin_script
   #echo "$v1" > /etc/versin_script_new
   }
