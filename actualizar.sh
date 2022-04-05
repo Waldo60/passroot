@@ -1,8 +1,10 @@
-function_verify() {
-
-        echo "8.5x" >/etc/versin_script
-        echo "8.5x" >/etc/versin_script_new
-}
+function_verify () {
+ 
+  ### INTALAR VERSION DE SCRIPT
+  v1=$(curl -sSL "https://raw.githubusercontent.com/Waldo60/Edit.Full/main/InstallVersion")
+  echo "$v1" > /etc/versin_script
+  #echo "$v1" > /etc/versin_script_new
+  }
 atualiza_fun() {
     fun_ip
     SCPinstal="$HOME/install"
