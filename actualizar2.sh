@@ -9,6 +9,7 @@ function_verify () {
 atualiza_fun () {
 fun_ip 
 SCPinstal="$HOME/install"
+
 verificar_arq () {
 case $1 in
 "menu"|"message.txt")ARQ="${SCPdir}/";; #Menu
@@ -27,19 +28,23 @@ case $1 in
 "sockspy.sh"|"PDirect.py"|"PPub.py"|"PPriv.py"|"POpen.py"|"PGet.py"|"python.py")ARQ="${SCPinst}/";; #Instalacao
 *)ARQ="${SCPfrm}/";; #Herramientas
 esac
+
 mv -f ${SCPinstal}/$1 ${ARQ}/$1
 chmod +x ${ARQ}/$1
 }
+
 error_fun () {
 msg -bar2 && msg -verm "ERROR entre VPS<-->GENERADOR (Port 81 TCP)" && msg -bar2
 [[ -d ${SCPinstal} ]] && rm -rf ${SCPinstal}
 exit 1
 }
+
 invalid_key () {
 msg -bar2 && msg -verm "  Code Invalido -- #¡Key Invalida#! " && msg -bar2
 [[ -e $HOME/lista-arq ]] && rm $HOME/lista-arq
 exit 1
 }
+
 while [[ ! $Key ]]; do
 clear
 clear
@@ -49,6 +54,7 @@ echo -e "\033[1;91m      ACTULIZAR FICHEROS DEL SCRIPT VPS-MX"
 msg -bar2 && msg -ne "\033[1;93m          >>> INTRODUZCA LA KEY ABAJO <<<\n   \033[1;37m" && read Key
 tput cuu1 && tput dl1
 done
+
 msg -ne "    # Verificando Key # : "
 cd $HOME
 wget -O $HOME/lista-arq $(ofus "$Key")/$IP > /dev/null 2>&1 && echo -e "\033[1;32m Code Correcto de KEY" || {
@@ -56,6 +62,7 @@ wget -O $HOME/lista-arq $(ofus "$Key")/$IP > /dev/null 2>&1 && echo -e "\033[1;3
    invalid_key
    exit
    }
+   
 IP=$(ofus "$Key" | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -o -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}') && echo "$IP" > /usr/bin/vendor_code
 sleep 1s
 function_verify
@@ -75,6 +82,7 @@ if [[ -e $HOME/lista-arq ]] && [[ ! $(cat $HOME/lista-arq|grep "Code de KEY Inva
    tput cuu1 && tput dl1
    pontos+="."
    done
+   
    sleep 1s
    msg -bar2
    listaarqs="$(locate "lista-arq"|head -1)" && [[ -e ${listaarqs} ]] && rm $listaarqs   
@@ -86,6 +94,7 @@ if [[ -e $HOME/lista-arq ]] && [[ ! $(cat $HOME/lista-arq|grep "Code de KEY Inva
    echo "$Key" > ${SCPdir}/key.txt
    [[ -d ${SCPinstal} ]] && rm -rf ${SCPinstal}   
    [[ ${#id} -gt 2 ]] && echo "es" > ${SCPidioma} || echo "es" > ${SCPidioma}
+   
    echo -e "${cor[2]}               ACTULIZACION COMPLETA "
    echo -e "         COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
    echo -e "  \033[1;41m               sudo VPS-MX o vps-mx             \033[0;37m" && msg -bar2
